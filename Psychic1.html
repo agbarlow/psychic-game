@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Psychic Game</title>
+	<meta name="generator" content="BBEdit 11.6" />
+	<title>Psychic Game</title>
+<!-- Added link to the jQuery Library -->
+	<script src="https://code.jquery.com/jquery-3.1.1.js">
+	</script>
+<!-- Added a link to Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+<!-- Jumbotron for Title -->
+<div class="jumbotron">
+	<h1 class="text-center">
+		Psychic Game! 
+	</h1>
+	<h3 class="text-center">
+		Guess the Letter I'm thinking?? 
+	</h3>
+</div>
+<div class="container">
+	<div class="row">
+<!-- Calculator Panel -->
+		<div class="col-lg-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Stats: 
+					</h3>
+				</div>
+				<div class="panel-body">
+					<h2>
+						Wins: 
+						<h2 id="wins">
+						</h2>
+					</h2>
+					<h2>
+						Losses: 
+						<h2 id="losses">
+						</h2>
+					</h2>
+					<h2>
+						Tries Remaining: 
+						<h2 id="tries">
+						</h2>
+						<h2>
+						Letters Guessed: 
+						<h2 id="keystroke">
+						</h2>
+					</h2>
+				</div>
+			</div>
+		</div>
+<!-- Result Panel -->
+		<div class="col-lg-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Letters 
+					</h3>
+				</div>
+				<div class="panel-body">
+					<button id="button-a" class="btn btn-letter value" value="1"> 
+					<h1>
+						A 
+					</h1>
+					</button><button id="button-b" class="btn btn-letter value" value="2"> 
+					<h1>
+						B 
+					</h1>
+					</button><button id="button-c" class="btn btn-letter value" value="3"> 
+					<h1>
+						C 
+					</h1>
+					</button><button id="button-d" class="btn btn-letter value" value="4"> 
+					<h1>
+						D 
+					</h1>
+					</button> <button id="button-e" class="btn btn-letter value" value="5"> 
+					<h1>
+						E 
+					</h1>
+					</button><button id="button-f" class="btn btn-letter value" value="6"> 
+					<h1>
+						F 
+					</h1>
+					</button><button id="button-g" class="btn btn-letter value" value="7"> 
+					<h1>
+						G 
+					</h1>
+					</button> <br>
+					</br>
+					<button id="button-h" class="btn btn-letter value" value="8"> 
+					<h1>
+						H 
+					</h1>
+					</button><button id="button-i" class="btn btn-letter value" value="9"> 
+					<h1>
+						I 
+					</h1>
+					</button><button id="button-j" class="btn btn-letter value" value="10"> 
+					<h1>
+						J 
+					</h1>
+					</button><button id="button-k" class="btn btn-letter value" value="11"> 
+					<h1>
+						K 
+					</h1>
+					</button><button id="button-l" class="btn btn-letter value" value="12"> 
+					<h1>
+						L 
+					</h1>
+					</button> </button><button id="button-m" class="btn btn-letter value" value="13"> 
+					<h1>
+						M 
+					</h1>
+					</button><button id="button-n" class="btn btn-letter value" value="14"> 
+					<h1>
+						N 
+					</h1>
+					</button><br>
+					</br>
+					<button id="button-o" class="btn btn-letter value" value="15"> 
+					<h1>
+						O 
+					</h1>
+					</button><button id="button-p" class="btn btn-letter value" value="16"> 
+					<h1>
+						P 
+					</h1>
+					</button><button id="button-q" class="btn btn-letter value" value="17"> 
+					<h1>
+						Q 
+					</h1>
+					</button><button id="button-r" class="btn btn-letter value" value="18"> 
+					<h1>
+						R 
+					</h1>
+					</button><button id="button-s" class="btn btn-letter value" value="19"> 
+					<h1>
+						S 
+					</h1>
+					</button><button id="button-t" class="btn btn-letter value" value="20"> 
+					<h1>
+						T 
+					</h1>
+					<button id="button-u" class="btn btn-letter value" value="21"> 
+					<h1>
+						U 
+					</h1>
+					</button> <br>
+					</br>
+					<button id="button-v" class="btn btn-letter value" value="22"> 
+					<h1>
+						V 
+					</h1>
+					</button><button id="button-w" class="btn btn-letter value" value="23"> 
+					<h1>
+						W 
+					</h1>
+					</button><button id="button-x" class="btn btn-letter value" value="24"> 
+					<h1>
+						X 
+					</h1>
+					</button><button id="button-y" class="btn btn-letter value" value="25"> 
+					<h1>
+						Y 
+					</h1>
+					<button id="button-z" class="btn btn-letter value" value="26"> 
+					<h1>
+						Z 
+					</h1>
+					</button> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<style>		.btn-letter {
+		    color: #fff;
+		    background-color: green;
+		    border-color: green;
+		    margin-left: 15px;
+		}
+		
+		.btn-word {
+			color: black;
+			background-color: white;
+			margin-left: 15px;
+			
+		}	
+		.jumbotron {
+			background-color: yellow;
+			
+		}
+		.panel-heading {
+			background-color: purple;
+			color: white;
+		
+		}	
+			
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		
+		var lets=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+		var words=["hello","pizza","soccer","phone","dog","popcorn","truck","wife","daughter"];
+		var operator=false;
+		var wins=0;
+		var losses=0;
+		var tries=9;
+		var guess=0;
+		var computer=1;
+		var keystroke="";
+		
+		
+		
+		 $("#wins").html(wins);
+		 $("#losses").html(losses);
+		 $("#tries").html(tries);
+		
+		computer = Math.floor(Math.random() *26)+1;
+		//$("#computer").html(computer);
+		
+		//console.log(lets[2]);
+		 
+		  $(".btn-letter").on("click", function() {
+		        guess= $(this).attr("value");
+		        guess= parseInt(guess);
+		        if (guess===computer && tries>0) {console.log("YES!!!!");
+		        wins=wins+1;
+		        computer = Math.floor(Math.random() *26)+1;
+		        $("#wins").html(wins);
+		        tries=9;
+		        $("#tries").html(tries);
+		        keystroke=" ";
+		        $("#keystroke").html(keystroke);
+		        
+		        } else {tries=(tries-1);
+		        keystroke=keystroke+" "+lets[guess-1];
+		        $("#keystroke").html(keystroke);
+		        console.log(computer);
+		        $("#tries").html(tries);
+
+		        	if (tries===0) {
+		        	losses=(losses+1);
+		        	tries=9;
+		        	keystroke="";
+		        	computer = Math.floor(Math.random() *26)+1;
+		        	$("#losses").html(losses);
+		        	$("#tries").html(tries);
+		        	$("#keystroke").html(keystroke);
+		        	
+		        	}
+		        }            
+		        
+		   });         
+		        
+		        
+		   
+		 });
+	</script>
+</body>
+</html>
